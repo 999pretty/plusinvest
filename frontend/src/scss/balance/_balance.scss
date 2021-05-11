@@ -1,0 +1,126 @@
+@import '../_media-queries';
+@import '../_themes';
+
+.balance {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin: auto;
+  margin-top: 35px;
+  min-height: 90vh;
+  width: 100%;
+  max-width: 1200px;
+  padding-right: 180px;
+  padding-left: 180px;
+
+  @include tablet {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  h3 {
+    margin: 8px;
+  }
+
+  &__rows {
+    li {
+      list-style-type: none;
+    }
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    li:nth-child(odd) {
+      @include theme() {
+        background-color: darken(theme-get('bg-color'), 5%);
+      }
+    }
+
+    li:nth-child(even) {
+      @include theme() {
+        background-color: darken(theme-get('bg-color'), 1%);
+      }
+    }
+
+    &__row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border-top: 1px solid rgb(173, 173, 173);
+      @include theme() {
+        border-top: lighten(theme-get('bg-color'), 5%);
+      }
+
+      @include tablet {
+        margin: 5px;
+        font-size: 75%;
+      }
+
+      &__left {
+        margin-left: 25px;
+        margin-top: 5px;
+        line-height: 1.5rem;
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet {
+          width: 50%;
+          flex-direction: column;
+          margin-left: 5px;
+        }
+
+        @media (max-width: 1100px) {
+          flex-direction: column;
+        }
+
+        &__name {
+          min-width: 150px;
+          text-align: left;
+        }
+
+        span {
+          color: rgb(149, 149, 149);
+          font-size: 85%;
+        }
+
+        &__id {
+          font-size: 60%;
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+      &__right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        &__amount {
+          margin-right: 25px;
+          margin-top: 5px;
+          line-height: 1.5rem;
+          display: flex;
+          flex-direction: row;
+
+          @include tablet {
+            margin-right: 5px;
+          }
+
+          &__positive {
+            color: rgb(73, 185, 101);
+          }
+
+          &__negative {
+            color: rgb(167, 42, 42);
+          }
+
+          span {
+            color: rgb(149, 149, 149);
+          }
+        }
+      }
+    }
+  }
+}

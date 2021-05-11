@@ -1,0 +1,105 @@
+.dropdown {
+  position: relative;
+  @include theme() {
+    color: theme-get('text-color');
+  }
+  cursor: default;
+  .selected-value {
+    .arrow {
+      line-height: 1.5;
+      font-size: 1rem;
+      @include theme() {
+        color: theme-get('text-color');
+        background-color: theme-get('bg-color');
+      }
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      box-sizing: border-box;
+      cursor: default;
+      outline: none;
+      min-width: 220px;
+      transition: all 200ms ease;
+      width: 100%;
+
+      background: no-repeat;
+      background-image: url('../../assets/arrow.svg');
+      background-size: 15px;
+      background-position: right center;
+      background-origin: content-box;
+      padding: 8px 5px 8px 10px;
+    }
+    .arrow::placeholder {
+      font-size: 12px;
+      font-style: italic;
+    }
+
+    .sort {
+      line-height: 1.5;
+      font-size: 1rem;
+      @include theme() {
+        color: theme-get('text-color');
+        background-color: theme-get('bg-color');
+      }
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      box-sizing: border-box;
+      cursor: default;
+      outline: none;
+      min-width: 220px;
+      transition: all 200ms ease;
+      width: 100%;
+
+      background: no-repeat;
+      background-image: url('../../assets/sort.svg');
+      background-size: 15px;
+      background-position: right center;
+      background-origin: content-box;
+      padding: 8px 5px 8px 10px;
+    }
+    .sort::placeholder {
+      font-size: 12px;
+      font-style: italic;
+    }
+  }
+  .options {
+    display: none;
+    @include theme() {
+      background-color: theme-get('bg-color');
+    }
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    margin-top: -1px;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 1000;
+    -webkit-overflow-scrolling: touch;
+  }
+  .options.open {
+    display: block;
+  }
+  .option {
+    box-sizing: border-box;
+    @include theme() {
+      color: theme-get('text-color');
+    }
+    cursor: pointer;
+    display: block;
+    padding: 8px 10px;
+    &:hover {
+      @include theme() {
+        color: theme-get('text-color');
+        background-color: #acacac;
+      }
+    }
+  }
+  .option.selected {
+    @include theme() {
+      color: theme-get('text-color');
+      background-color: theme-get('bg-color');
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import './shared/_header';
+@import './shared/_footer';
+@import './shared/_userform';
+@import './shared/_spinner';
+@import './shared/_dropdown';
+
+@import './home/_home';
+@import './about/_about';
+@import './profile/_profile';
+@import './joinus/_joinus';
+@import './investnow/_investnow';
+@import './balance/_balance';
+@import './analytics/_analytics';
+@import './analytics/_tooltip';
+
+@import './_media-queries';
+@import './_themes';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  @include theme() {
+    color: theme-get('text-color');
+    background-color: theme-get('bg-color');
+  }
+}
+
+.App {
+  @include theme() {
+    color: theme-get('text-color');
+    background-color: theme-get('bg-color');
+    transition: all 1s ease;
+  }
+}

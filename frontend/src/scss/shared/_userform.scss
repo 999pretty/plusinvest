@@ -1,0 +1,114 @@
+.uf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin: auto;
+  height: 90vh;
+  width: 100%;
+  max-width: 1200px;
+  padding-right: 24px;
+  padding-left: 24px;
+
+  p {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  h4 {
+    margin-bottom: 20px;
+    margin-top: 80px;
+    @include tablet {
+      margin-top: 30px;
+      margin-bottom: 0px;
+    }
+  }
+
+  &__form {
+    h5 {
+      text-align: left;
+      margin-left: 3px;
+
+      span {
+        font-weight: 600;
+        font-size: 120%;
+      }
+    }
+
+    span {
+      text-align: left;
+    }
+
+    &__input {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        @include theme() {
+          color: theme-get('text-color');
+          background-color: theme-get('bg-color');
+        }
+        line-height: 1.5;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        box-sizing: border-box;
+        cursor: default;
+        outline: none;
+        padding: 8px 5px 8px 10px;
+        min-width: 220px;
+        max-width: 230px;
+        transition: all 200ms ease;
+        width: 100%;
+        margin: 5px;
+      }
+      input::placeholder {
+        font-size: 12px;
+        font-style: italic;
+      }
+      input::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+      }
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active {
+        @include theme() {
+          -webkit-box-shadow: 0 0 0 30px theme-get('bg-color') inset !important;
+          -webkit-text-fill-color: theme-get('text-color');
+        }
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type='number'] {
+        -moz-appearance: textfield;
+      }
+    }
+    button {
+      background-color: $primaryColor;
+      color: white;
+      border: none;
+      font-weight: 600;
+      font-size: 14px;
+      min-width: 230px;
+      padding: 12px 5px 12px 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+      outline: none;
+      margin: 5px;
+
+      &:hover {
+        background-color: $secondaryColor;
+      }
+    }
+  }
+}
+
+.uf__header {
+  text-align: left;
+}

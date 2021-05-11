@@ -1,0 +1,27 @@
+$primaryColor: #ff6500;
+$secondaryColor: lighten($primaryColor, 10%);
+
+$themes: (
+  darkTheme: (
+    'text-color': white,
+    'bg-color': #222222,
+  ),
+  lightTheme: (
+    'text-color': black,
+    'bg-color': #ffffff,
+  ),
+);
+
+@mixin theme() {
+  @each $theme, $map in $themes {
+    $theme-map: $map !global;
+    .#{$theme} & {
+      @content;
+    }
+  }
+  $theme-map: null !global;
+}
+
+@function theme-get($key) {
+  @return map-get($theme-map, $key);
+}

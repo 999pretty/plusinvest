@@ -1,0 +1,13 @@
+@import '../_media-queries';
+@import '../_themes';
+
+.tooltip {
+  border-radius: 0.25rem;
+  @include theme() {
+    color: theme-get('text-color');
+    background-color: theme-get('bg-color');
+  }
+  padding: 1rem;
+  box-shadow: 5px 10px 13px 1px #444444;
+  text-align: center;
+}

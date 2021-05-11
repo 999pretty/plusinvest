@@ -1,0 +1,24 @@
+@import '../_themes';
+
+.footer {
+  background-color: $primaryColor;
+  background-image: url(../../assets/topography.svg);
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  transition: all 1s ease;
+  @include theme() {
+    color: theme-get('text-color');
+    background-color: theme-get('bg-color');
+  }
+
+  .footer__year {
+    font-size: 15px;
+    font-weight: 600;
+    background-color: $primaryColor;
+    padding: 5px;
+    border-radius: 5px;
+  }
+}
